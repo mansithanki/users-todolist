@@ -3,15 +3,19 @@
 
 The creation of this app is a part of coding challenge that involves building a web application using specific technologies and APIs. The goal is to create a two-page application that displays users' data and allows the creation of new todos. Additionally, a Cypress test should be implemented to verify the ID of a newly created todo.
 
+### Link to the App:
+https://users-todolist.vercel.app/
+
 ### Technologies Used
 The challenge must be completed using the following technologies:
 
-NextJs 13
-ReScript
-Tailwind
-Cypress
-API Data
-The application should fetch data from the jsonplaceholder API.
+#### NextJs 13
+#### ReScript
+#### Tailwind
+#### Cypress
+
+### API Data
+The application should fetch data from the jsonplaceholder API. https://jsonplaceholder.typicode.com/users
 
 ### Pages
 The application should have two pages:
@@ -47,6 +51,15 @@ yarn dev
 # or
 pnpm dev
 ```
+
+### bs-dependencies Used:
+
+#### @rescript/react
+#### rescript-axios 
+#### bs-fetch 
+#### rescript-json 
+#### bs-json
+
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
