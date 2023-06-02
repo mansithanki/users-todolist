@@ -80,7 +80,7 @@ let make = () => {
       ->Belt.Array.mapWithIndex((i, todo) => {
         <div
           key={string_of_int(todo.id)}
-          className={`flex items-center ${if todo.isDone { "bg-green-500 line-through" } else { "bg-blue-500"}} text-white px-4 py-2 mt-4 mx-4 text-lg w-full`}
+          className={`flex items-center bg-${if todo.isDone { "bg-green-500 line-through" } else { "bg-blue-500"}} text-white px-4 py-2 mt-4 mx-4 text-lg w-full`}
         >
           <input
             className="mr-2 mt-1"

@@ -90,7 +90,7 @@ function Todoapp(props) {
                 }, Belt_Array.mapWithIndex(state.todoList, (function (i, todo) {
                         return React.createElement("div", {
                                     key: String(todo.id),
-                                    className: "flex items-center " + (
+                                    className: "flex items-center bg-" + (
                                       todo.isDone ? "bg-green-500 line-through" : "bg-blue-500"
                                     ) + " text-white px-4 py-2 mt-4 mx-4 text-lg w-full"
                                   }, React.createElement("input", {
