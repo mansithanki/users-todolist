@@ -88,7 +88,7 @@ let make = () => {
             checked={todo.isDone}
             onChange={_ => dispatch(MarkDone(i))}
           />
-          <div className=`inline-block ml-2 flex-grow whitespace-nowrap break-normal overflow-hidden overflow-ellipsis`>
+          <div className="inline-block ml-2 flex-grow whitespace-nowrap break-normal overflow-hidden overflow-ellipsis">
             <div className="todoid inline-block">{React.int(todo.id)} </div>
             <span className="whitespace-nowrap break-normal overflow-hidden overflow-ellipsis">{React.string("   " ++ todo.title)} </span>
           </div>
