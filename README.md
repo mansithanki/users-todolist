@@ -36,9 +36,17 @@ A Cypress test should be implemented to verify the ID of a newly created todo. T
 
 
 ### Screenshots:
+#### Users Page:
 
 <img width="1433" alt="Screen Shot 2023-06-02 at 6 39 23 PM" src="https://github.com/mansithanki/users-todolist/assets/44176224/a65cb9db-2b4d-4f59-9ffe-1fddc46cf157">
+
+#### Todo Page:
 <img width="1433" alt="Screen Shot 2023-06-02 at 6 38 53 PM" src="https://github.com/mansithanki/users-todolist/assets/44176224/707eb55d-4b6f-4e63-b116-65242354872f">
+
+#### Testing Passed:
+<img width="1159" alt="Screen Shot 2023-06-02 at 6 57 43 PM" src="https://github.com/mansithanki/users-todolist/assets/44176224/904d29d9-976c-4f88-b437-0c44846705f2">
+
+
 
 ## Getting Started
 
