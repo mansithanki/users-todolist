@@ -1,0 +1,21 @@
+rescript = 1
+g_finger := /Users/mansipravinthanki/Desktop/userstodo-mansithanki/users-todo-code/node_modules/@rescript/react/lib/ocaml/install.stamp
+g_finger := /Users/mansipravinthanki/Desktop/userstodo-mansithanki/users-todo-code/node_modules/rescript-axios/lib/ocaml/install.stamp
+g_finger := /Users/mansipravinthanki/Desktop/userstodo-mansithanki/users-todo-code/node_modules/bs-fetch/lib/ocaml/install.stamp
+g_finger := /Users/mansipravinthanki/Desktop/userstodo-mansithanki/users-todo-code/node_modules/rescript-json/lib/ocaml/install.stamp
+g_finger := /Users/mansipravinthanki/Desktop/userstodo-mansithanki/users-todo-code/node_modules/bs-json/lib/ocaml/install.stamp
+rule astj
+  command = /Users/mansipravinthanki/Desktop/userstodo-mansithanki/users-todo-code/node_modules/rescript/darwinarm64/bsc.exe  -bs-v 10.1.4 -bs-jsx 4 -bs-jsx-mode classic  -absname -bs-ast -o $out $i
+o src/app/Users.ast : astj ../../src/app/Users.res
+rule deps
+  command = /Users/mansipravinthanki/Desktop/userstodo-mansithanki/users-todo-code/node_modules/rescript/darwinarm64/bsb_helper.exe -hash dec09d7b6d674e878cbda0c83a4d3a5d $in
+  restat = 1
+o src/app/Users.d : deps src/app/Users.ast
+rule mij
+  command = /Users/mansipravinthanki/Desktop/userstodo-mansithanki/users-todo-code/node_modules/rescript/darwinarm64/bsc.exe -I src/app/userslist -I src/app/todo -I src/app -I src -I /Users/mansipravinthanki/Desktop/userstodo-mansithanki/users-todo-code/node_modules/@rescript/react/lib/ocaml -I /Users/mansipravinthanki/Desktop/userstodo-mansithanki/users-todo-code/node_modules/rescript-axios/lib/ocaml -I /Users/mansipravinthanki/Desktop/userstodo-mansithanki/users-todo-code/node_modules/bs-fetch/lib/ocaml -I /Users/mansipravinthanki/Desktop/userstodo-mansithanki/users-todo-code/node_modules/rescript-json/lib/ocaml -I /Users/mansipravinthanki/Desktop/userstodo-mansithanki/users-todo-code/node_modules/bs-json/lib/ocaml   -bs-package-name users-todo-code -bs-package-output es6:$in_d:.bs.js -bs-v $g_finger $i
+  dyndep = 1
+  restat = 1
+o src/app/Users.cmj src/app/Users.cmi ../../src/app/Users.bs.js : mij src/app/Users.ast
+o src/app/todo/todoapp.ast : astj ../../src/app/todo/todoapp.res
+o src/app/todo/todoapp.d : deps src/app/todo/todoapp.ast
+o src/app/todo/todoapp.cmj src/app/todo/todoapp.cmi ../../src/app/todo/todoapp.bs.js : mij src/app/todo/todoapp.ast

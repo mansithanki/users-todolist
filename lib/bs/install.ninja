@@ -1,0 +1,14 @@
+rescript = 1
+rule cp
+  command = cp $i $out
+rule touch
+ command = touch $out
+o Users.cmi : cp ../bs/src/app/Users.cmi
+o Users.cmj : cp ../bs/src/app/Users.cmj
+o Users.cmt : cp ../bs/src/app/Users.cmt
+o Users.res : cp ../../src/app/Users.res
+o todoapp.cmi : cp ../bs/src/app/todo/todoapp.cmi
+o todoapp.cmj : cp ../bs/src/app/todo/todoapp.cmj
+o todoapp.cmt : cp ../bs/src/app/todo/todoapp.cmt
+o todoapp.res : cp ../../src/app/todo/todoapp.res
+build install.stamp : touch Users.cmi Users.cmj todoapp.cmi todoapp.cmj 
