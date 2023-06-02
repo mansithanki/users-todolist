@@ -64,6 +64,7 @@ function Todoapp(props) {
           _0: newValue
         });
   };
+  var isInputEmpty = state.inputValue === "";
   return React.createElement("div", {
               className: "App bg-gray-200 min-h-screen flex flex-col items-center justify-center"
             }, React.createElement("h1", {
@@ -77,6 +78,7 @@ function Todoapp(props) {
                   className: "inline-block"
                 }, React.createElement("button", {
                       className: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded m-1",
+                      disabled: isInputEmpty,
                       onClick: (function (param) {
                           Curry._1(dispatch, /* AddTodo */0);
                         })
@@ -92,7 +94,7 @@ function Todoapp(props) {
                                     key: String(todo.id),
                                     className: "flex items-center bg-" + (
                                       todo.isDone ? "green-500" : "blue-500"
-                                    ) + " text-white px-4 py-2 mx-4 text-lg w-full"
+                                    ) + " text-white px-4 py-2 mt-4 mx-4 text-lg w-full"
                                   }, React.createElement("input", {
                                         className: "mr-2 mt-1",
                                         checked: todo.isDone,

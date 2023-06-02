@@ -68,11 +68,13 @@ let make = () => {
     dispatch(InputChanged(newValue));
   };
 
+  let isInputEmpty = state.inputValue === ""; // Check if input is empty
+
   <div className="App bg-gray-200 min-h-screen flex flex-col items-center justify-center">
     <h1 className="text-2xl mb-4 inline-block"> {"Todo Items"->React.string} </h1>
     <input className="border border-gray-800 rounded px-2 py-1 mb-2" value={state.inputValue} type_="text" onChange={handleInput} />
     <div className="inline-block">
-      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded m-1" onClick={_ => dispatch(AddTodo)}> {"ADD"->React.string} </button>
+      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded m-1" onClick={_ => dispatch(AddTodo)} disabled={isInputEmpty}> {"ADD"->React.string} </button>
       <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 border border-red-700 rounded m-1" onClick={_ => dispatch(ClearTodos)}> {"CLEAR LIST"->React.string} </button>
     </div>
     <div className="w-screen mx-4 flex flex-wrap m-2">
@@ -80,7 +82,7 @@ let make = () => {
       ->Belt.Array.mapWithIndex((i, todo) => {
         <div
           key={string_of_int(todo.id)}
-          className={`flex items-center bg-${if todo.isDone { "green-500" } else { "blue-500"}} text-white px-4 py-2 mx-4 text-lg w-full`}
+          className={`flex items-center bg-${if todo.isDone { "green-500" } else { "blue-500"}} text-white px-4 py-2 mt-4 mx-4 text-lg w-full`}
         >
           <input
             className="mr-2 mt-1"
