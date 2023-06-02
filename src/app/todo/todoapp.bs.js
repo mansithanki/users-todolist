@@ -90,8 +90,8 @@ function Todoapp(props) {
                 }, Belt_Array.mapWithIndex(state.todoList, (function (i, todo) {
                         return React.createElement("div", {
                                     key: String(todo.id),
-                                    className: "flex items-center bg-" + (
-                                      todo.isDone ? "green-500" : "blue-500"
+                                    className: "flex items-center " + (
+                                      todo.isDone ? "bg-green-500 line-through" : "bg-blue-500"
                                     ) + " text-white px-4 py-2 mt-4 mx-4 text-lg w-full"
                                   }, React.createElement("input", {
                                         className: "mr-2 mt-1",
@@ -104,9 +104,7 @@ function Todoapp(props) {
                                                 });
                                           })
                                       }), React.createElement("div", {
-                                        className: "inline-block ml-2 flex-grow whitespace-nowrap break-normal overflow-hidden overflow-ellipsis " + (
-                                          todo.isDone ? "line-through" : ""
-                                        ) + ""
+                                        className: "inline-block ml-2 flex-grow whitespace-nowrap break-normal overflow-hidden overflow-ellipsis"
                                       }, React.createElement("div", {
                                             className: "todoid inline-block"
                                           }, todo.id), React.createElement("span", {
