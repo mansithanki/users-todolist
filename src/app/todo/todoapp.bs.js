@@ -91,8 +91,8 @@ function Todoapp(props) {
                         return React.createElement("div", {
                                     key: String(todo.id),
                                     className: "flex items-center bg-" + (
-                                      todo.isDone ? "bg-green-500 line-through" : "bg-blue-500"
-                                    ) + " text-white px-4 py-2 mt-4 mx-4 text-lg w-full"
+                                      todo.isDone ? "green-500" : "blue-500"
+                                    ) + " text-white px-4 py-2 mx-4 text-lg w-full"
                                   }, React.createElement("input", {
                                         className: "mr-2 mt-1",
                                         checked: todo.isDone,
@@ -104,7 +104,9 @@ function Todoapp(props) {
                                                 });
                                           })
                                       }), React.createElement("div", {
-                                        className: "inline-block ml-2 flex-grow whitespace-nowrap break-normal overflow-hidden overflow-ellipsis"
+                                        className: "inline-block ml-2 flex-grow whitespace-nowrap break-normal overflow-hidden overflow-ellipsis " + (
+                                          todo.isDone ? "bg-green-500 line-through" : ""
+                                        ) + ""
                                       }, React.createElement("div", {
                                             className: "todoid inline-block"
                                           }, todo.id), React.createElement("span", {

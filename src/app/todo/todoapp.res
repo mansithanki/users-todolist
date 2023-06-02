@@ -80,7 +80,7 @@ let make = () => {
       ->Belt.Array.mapWithIndex((i, todo) => {
         <div
           key={string_of_int(todo.id)}
-          className={`flex items-center bg-${if todo.isDone { "bg-green-500 line-through" } else { "bg-blue-500"}} text-white px-4 py-2 mt-4 mx-4 text-lg w-full`}
+          className={`flex items-center bg-${if todo.isDone { "green-500" } else { "blue-500"}} text-white px-4 py-2 mx-4 text-lg w-full`}
         >
           <input
             className="mr-2 mt-1"
@@ -88,7 +88,7 @@ let make = () => {
             checked={todo.isDone}
             onChange={_ => dispatch(MarkDone(i))}
           />
-          <div className="inline-block ml-2 flex-grow whitespace-nowrap break-normal overflow-hidden overflow-ellipsis">
+          <div className=`inline-block ml-2 flex-grow whitespace-nowrap break-normal overflow-hidden overflow-ellipsis ${if todo.isDone { "bg-green-500 line-through" } else { "" }}`>
             <div className="todoid inline-block">{React.int(todo.id)} </div>
             <span className="whitespace-nowrap break-normal overflow-hidden overflow-ellipsis">{React.string("   " ++ todo.title)} </span>
           </div>
